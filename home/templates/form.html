@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="{% static 'style/form.css' %}">
+
+</head>
+<body>
+ <div class="form-container">
+    <form action="{% url 'form' %}" method="post" class="form">
+        {% csrf_token %}               
+        <div class="form-group">
+       
+        <label> {{form.nome.label}}</label>
+        {{form.nome}}
+        {{form.nome.errors}}
+        </div>
+
+        <div class="form-group">
+          <label for="">  {{form.email.label}}</label>
+            {{form.email}}
+            {{form.email.errors}}
+        </div>
+
+        <button class="btn">Confirma</button>
+    </form>
+ </div>
+    
+</body>
+</html>
