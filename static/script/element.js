@@ -1,5 +1,4 @@
 
-export const paragrafoTest = 'Oi elements.js';
 
 
 
@@ -23,3 +22,12 @@ export function criarParagrafo(seletor){
     return novoParagrafo;
     
 };
+
+export function notSubmit(form){
+    form.addEventListener('submit',(event)=>{
+       
+        event.preventDefault();
+        
+        
+    })
+}
