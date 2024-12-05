@@ -5,8 +5,6 @@
     box-sizing: border-box;
 }
 
-
-
 body{
     margin: 0;
     padding: 0;
@@ -144,9 +142,30 @@ height: 100%;
 }
 
 .password1-input{
-    position: relative;
+    /* position: relative; */
     display: flex;
     align-items: center;
+}
+#id_username{
+    position: relative;
+    margin-bottom: 15px;
+
+}
+.user-erro{
+    position: absolute;
+    width: 100%;
+    bottom: 90%;
+}
+
+
+#id_password2{
+    position: relative;
+}
+
+.password2-erro{
+    position: absolute;
+    width: 100%;
+    bottom: 50%;
 }
 
 .password-visible,.password-invisible{
@@ -200,19 +219,19 @@ height: 100%;
     align-items: center;
     width: 100%;
     padding: 10px;
-    color: rgb(188, 240, 173);
-    background-color:rgb(55, 105, 41);
-    bottom: 40%;
+    /* color: rgb(150, 249, 122); */
+    color: #fff;
+    font-weight: lighter;
+    background-color:rgb(21, 71, 33);
+    bottom:90%;
     left:85%; 
     border: 2px solid #fff;   
     border-radius: 5px;
     z-index: 1;
 }
 .tooltip p{
-    /* border: 1px solid black; */
     margin-bottom: 0px;
-    margin-top: 0;
-    
+    margin-top: 0;    
 }
 
 /* Triângulo na parte superior */
@@ -227,12 +246,6 @@ height: 100%;
     border-style: solid;
     border-color: rgb(55, 105, 41) transparent transparent transparent;
 }
-
-/* .password2{
-    display: none;
-    color: rgb(255, 215, 0);
-} */
-
 
 .strength-password{
     display: none;
@@ -259,7 +272,6 @@ height: 100%;
     height: auto;
     font-family: Helvetica;
     font-size: 15px;
-    /* margin-bottom: 5px; */
     margin-top: -10px;
 }
 

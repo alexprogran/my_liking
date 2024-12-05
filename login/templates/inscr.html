@@ -1,7 +1,7 @@
 {% load static %}
  
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,22 +25,19 @@
                 </div>                 
                 <div class="container-form">                   
                     <form id="inscrForm" action="{% url 'inscr' %}" method="post" class="form">
-                        {% csrf_token %}
-                        
+                        {% csrf_token %}                        
                         <div class="form-group">
                             <label>{{form.username.label}}</label>
                             <div class="user-input">
                                 {{form.username}}
                             </div>
-                            <!-- {{form.username.errors}} -->
                              <div class="user-erro">
-                            {% include "error_message.html" with erros=form.username.errors %}                               </div>
+                            {% include "error_message.html" with erros=form.username.errors %} 
                              </div>
                         <div class="form-group">
                             <label>{{ form.email.label }}</label>
                             {{ form.email }}
-                            {{form.email.errors}}
-                            
+                            {{form.email.errors}}                            
                         </div>                     
                         <div class="form-group">
                             <label>{{ form.password1.label }}</label>
@@ -63,8 +60,7 @@
                             <div class="password2-erro">
                                 {% include "error_message.html" with erros=form.password2.errors %}
                             </div>                     
-                        </div>
-                        
+                        </div>                        
                         <div class="strength-password">
                             <div class="container-strength">
                                 <i class="fas fa-circle weak"></i>
@@ -79,17 +75,13 @@
                                 <span></span>
                             </div>
                         </div>
-
                         <div class="password-strong"></div>
-
-
                         <button type="submit" class="btn-log">Confirma</button>
                     </form>                                        
                 </div>              
             </div>
          </div>
-    </div> 
-   
+    </div>    
     <script type="module" src="/static/script/inscr.js"></script>
     <script type="module" src="/static/script/element.js"></script>
 </body>

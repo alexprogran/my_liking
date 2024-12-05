@@ -1,5 +1,5 @@
 
-import {criarParagrafo} from "./element.js";
+import {criarParagrafo, notSubmit} from "./element.js";
 
 
 
@@ -24,7 +24,6 @@ const containerCircle = document.querySelector('.strength-password');
 const password2 = document.querySelector('.password2');
 const passwordInvisible = document.querySelector('.password-invisible');
 const passwordVisible = document.querySelector('.password-visible');
-const form = document.querySelector('.form');
 
 
 
@@ -64,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 });
 
 inputpassWord1.addEventListener('input', () => {
-
+    
     const password = inputpassWord1.value;
     const passwordLen = password.length; 
     const weak = document.querySelector('.weak');
@@ -75,6 +74,8 @@ inputpassWord1.addEventListener('input', () => {
     const containerCircle = document.querySelector('.strength-password');
     const password2 = document.querySelector('.password2');
     const passwordInvisible = document.querySelector('.password-invisible');
+    const button = document.querySelector('button[type="submit"]')
+    
 
     const senhaWeak = '*Senha curta necessário o mínimo de 8 caracteres.';
     const senhaMedia = '*Implemente uma letra a sua senha para torna-la mais segura.';
@@ -93,11 +94,13 @@ inputpassWord1.addEventListener('input', () => {
     const paragrafo = criarParagrafo('.password-strong p');   
 
     if (passwordLen == 0) {
-      
+        
         containerCircle.style.display = 'none';
         containerMessage.classList.remove('visible');
 
     }else if (passwordLen >= 1 && passwordLen < 8) {
+
+        button.disabled = true;
 
         containerCircle. style.display = 'flex';        
 
@@ -113,9 +116,13 @@ inputpassWord1.addEventListener('input', () => {
       
         paragrafo.textContent = senhaWeak;
 
-         containerMessage.appendChild(paragrafo);    
+         containerMessage.appendChild(paragrafo);  
+
+        
        
     }else if (passwordLen >= 8 && ! /[a-z]/.test(password)){
+
+        button.disabled = true;
 
         weak.style.color = 'rgb(19, 209, 5)';
 
@@ -132,9 +139,11 @@ inputpassWord1.addEventListener('input', () => {
         paragrafo.textContent = senhaMedia;
 
         containerMessage.appendChild(paragrafo);
-    
+        
 
     } else if (passwordLen >= 8 && /[a-z]/.test(password)){
+
+        button.disabled = false;
 
         containerCircle. style.display = 'flex';
 
@@ -153,9 +162,7 @@ inputpassWord1.addEventListener('input', () => {
         containerMessage.appendChild(paragrafo);  
     }
 
-});  
-
-   
+});     
 
 passwordInvisible.addEventListener('click', () =>{
     const seePassword = document.querySelectorAll('.password-visible, .password-invisible');
@@ -190,13 +197,21 @@ passwordInvisible.addEventListener('click', () =>{
 );
 
 
-// para resolver.
+// Retirando as valiações a submisão.
+document.querySelector('.btn-log').addEventListener('click', (event) => {
+    const tooltip = document.querySelectorAll('.tooltip');
+    const tooltipP = document.querySelectorAll('.tooltip p');
+    
+   
+    if (tooltipP) {
+            tooltip.forEach((elemento) =>{
+                elemento.style.display = 'none';
+            });
+        
+    }; 
+    
+});
 
-// form.addEventListener('submit', () => {
-//     if(password){
-//         passwordInvisible.style.display = 'block';
-//     }      
-// });
 
 inputpassWord1.addEventListener('click', () => {
     if (password){
