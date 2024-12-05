@@ -6,13 +6,13 @@ Inspirado em redes sociais, My Liking é uma plataforma onde os usuários podem 
 
 🛠 Tecnologias Utilizadas:
 
-Front-end: Template Django, HTML e CSS.
+✔️ Front-end: Template Django, HTML e CSS.
 
-Interatividade: Validações com Django Forms e JavaScript.
+✔️ Interatividade: Validações com Django Forms e JavaScript.
 
-Segurança: Estrutura para avaliação de força de senha e utilização do método make_password para armazenamento seguro de credenciais.
+✔️ Segurança: Estrutura para avaliação de força de senha e utilização do método make_password para armazenamento seguro de credenciais.
 
-Back-end: Totalmente integrado ao banco de dados, garantindo uma experiência funcional e segura
+✔️ Back-end: Totalmente integrado ao banco de dados, garantindo uma experiência funcional e segura
 
 
 O formulário de inscrição do usuário está diretamente conectado ao banco de dados, assegurando confiabilidade e integridade dos dados.
