@@ -12,7 +12,7 @@ Segurança: Estrutura para avaliação de força de senha e utilização do mét
 Back-end: Totalmente integrado ao banco de dados, garantindo uma experiência funcional e segura.
 O formulário de inscrição do usuário está diretamente conectado ao banco de dados, assegurando confiabilidade e integridade dos dados.
 
-As validações de formulários utilizam ferramentas poderosas do Django, como mensagens de erro personalizadas, além de lógica em JavaScript para enriquecer a experiência do usuário.
+As validações de formulários utilizam ferramentas do django, como mensagens de erro personalizadas, além de lógica em JavaScript para enriquecer a experiência do usuário.
 
 Publicado no linkedin, vídeo do projeto rodando: https://www.linkedin.com/in/allexdev/
 
